@@ -1,0 +1,14 @@
+{
+  "name": "chain",
+  "short_name": "chain",
+  "description": "A list of links, you can filter it",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000",
+  "theme_color": "#000",
+  "icons": [{
+    "src": "/assets/icon.png",
+    "type": "image/png",
+    "sizes": "512x512"
+  }]
+}
