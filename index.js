@@ -1,18 +1,34 @@
-var css = require('sheetify')
-var choo = require('choo')
+/*
+  Louis Links Page
+  TODO
+  - frontend
+  - rewrite front-end js to be a little cleaner
+  - write styling properly, in css
+  - add some info to page, add some ｡･:*:･ﾟ★,｡･:*:･ﾟ☆ d e s i g n ｡･:*:･ﾟ★,｡･:*:･ﾟ☆
 
-css('tachyons')
+  - backend
+  - write generator for subdirectories and include in build script
+  - create basic cachebusting
+  - turn this into a template I can use for other sites
+*/
 
-var app = choo()
-if (process.env.NODE_ENV !== 'production') {
-  app.use(require('choo-devtools')())
-} else {
-  app.use(require('choo-service-worker')())
+const fs = require('fs')
+
+const head = require('./components/head.js')
+const footer = require('./components/footer.js')
+const body = require('./components/body.js')
+
+function main () {
+  return `
+  <!DOCTYPE html>
+  <html lang="en">
+    ${head()}
+    ${body()}
+    ${footer()}
+  </html>
+  `
 }
 
-app.use(require('./stores/clicks'))
-
-app.route('/', require('./views/main'))
-app.route('/*', require('./views/404'))
-
-module.exports = app.mount('body')
+fs.writeFile('index.html', main(), 'utf8', function(){
+  console.log('index.html written')
+})
