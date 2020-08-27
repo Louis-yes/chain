@@ -1,11 +1,4 @@
-# chain
-A list of links, you can filter it
-
-## Commands
-Command                | Description                                      |
------------------------|--------------------------------------------------|
-`$ npm start`          | Start the development server
-`$ npm test`           | Lint, validate deps & run tests
-`$ npm run build`      | Compile all files into `dist/`
-`$ npm run create`     | Generate a scaffold file
-`$ npm run inspect`    | Inspect the bundle's dependencies
+#Chain
+Chain is just what I'm calling the tool I use to build the 'links' page on my personal website.
+It's a rudimentary static site builder, for simple sites built off of a pre existing data source.
+No dependencies, just run 'npm build' to build it
