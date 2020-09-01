@@ -10,7 +10,7 @@ const components = {
   link: function (ll) {
       return `
         <a
-          class="link db black hover-bg-red underline"
+          class="db link black hover-bg-red underline"
           href="${ll.href}"
           title="${ll.title}"
           data-tags="${ll.tags.join(',')}">
@@ -22,8 +22,6 @@ const components = {
     const href = tt
     return `<a href="${href}" class="
       tag link
-      pa2 dib ma2
-      ba red b--red
     ">${tt}</a>`
   }
 }
