@@ -24,7 +24,6 @@ const components = {
       tag link
       pa2 dib ma2
       ba red b--red
-      hover-bg-red hover-white
     ">${tt}</a>`
   }
 }
