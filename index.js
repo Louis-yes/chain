@@ -12,7 +12,9 @@
   - turn this into a template I can use for other sites
 */
 
-const fs = require('fs')
+const fs = require('fs') // this is the node module for interacting with my local directories
+
+const site = JSON.parse(fs.readFileSync('site.json'))
 
 const head = require('./components/head.js')
 const footer = require('./components/footer.js')
@@ -29,6 +31,9 @@ function main () {
   `
 }
 
+// as the name suggests, this writes the index.html
 fs.writeFile('index.html', main(), 'utf8', function(){
+  site.cache ++
+  fs.writeFileSync('site.json', JSON.stringify(site), 'utf8')
   console.log('index.html written')
 })

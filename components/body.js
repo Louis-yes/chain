@@ -1,4 +1,6 @@
 const links = require('../plugins/links')()
+const fs = require('fs')
+const site = JSON.parse(fs.readFileSync('site.json'))
 
 module.exports = body
 
@@ -10,7 +12,7 @@ const components = {
   link: function (ll) {
       return `
         <a
-          class="db link black hover-bg-red underline"
+          class="link"
           href="${ll.href}"
           title="${ll.title}"
           data-tags="${ll.tags.join(',')}">
@@ -48,12 +50,12 @@ function body () {
       overflow-scroll
       "
     >
-      <span id="activeTags" class="db red"></span>
+      <span id="active-tags" class="active-tags"></span>
       ${links.links.map(ll => {
          return components.link(ll)
       }).join('')}
     </div>
-    <script src="./assets/scripts.js"></script>
+    <script src="./assets/scripts.js?v=${site.cache}"></script>
   </body>
   `
 }

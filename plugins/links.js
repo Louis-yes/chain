@@ -1,7 +1,7 @@
 const path = require('path')
 const fs = require('fs')
 
-const links = fs.readFileSync(path.join(__dirname, '../../yesthisislouis/yyyy/links/links.csv'), 'utf8')
+const links = fs.readFileSync(path.join(__dirname, '../links.csv'), 'utf8')
 
 let links_ = links.split("\n").filter(a => a.length).map(ll => {
   const r = /\"(.*?)\"/g

@@ -1,8 +1,7 @@
-module.exports = head
+const fs = require('fs')
+const site = JSON.parse(fs.readFileSync('site.json'))
 
-const site = {
-  title: 'l i n k s'
-}
+module.exports = head
 
 function head () {
     return `
@@ -12,7 +11,7 @@ function head () {
       <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
       <title>${site.title}</title>
       <link rel="stylesheet" href="assets/tachyons.min.css"/>
-      <link rel="stylesheet" href="assets/style.css"/>
+      <link rel="stylesheet" href="assets/style.css?v=${site.cache}"/>
     </head>
     `
 }
