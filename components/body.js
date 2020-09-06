@@ -51,7 +51,7 @@ function body () {
       "
     >
       <span id="active-tags" class="active-tags"></span>
-      ${links.links.map(ll => {
+      ${links.links.reverse().map(ll => {
          return components.link(ll)
       }).join('')}
     </div>
