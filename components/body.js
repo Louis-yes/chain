@@ -32,22 +32,17 @@ function body () {
   return `
   <body class="pa3">
     <div class="
-      tags
-      fixed
+      tags fixed overflow-scroll
       top-0 h-50
       top-0-ns left-0-ns bottom-0-ns w-50-ns h-100-ns
-      overflow-scroll
       "
     >
       ${links.tags.map(tt => components.tag(tt)).join('')}
     </div>
     <div class="
-      links
-      fixed pa2
-      bottom-0 h-50
+      links fixed overflow-scroll
+      bottom-0 h-50 pa2 lh-copy
       top-0-ns right-0-ns bottom-0-ns h-100-ns w-50-ns
-      lh-copy
-      overflow-scroll
       "
     >
       <span id="active-tags" class="active-tags"></span>

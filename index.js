@@ -1,14 +1,17 @@
 /*
   Louis Links Page
   TODO
+
   - frontend
   - rewrite front-end js to be a little cleaner
   - write styling properly, in css
   - add some info to page, add some ｡･:*:･ﾟ★,｡･:*:･ﾟ☆ d e s i g n ｡･:*:･ﾟ★,｡･:*:･ﾟ☆
+  - search tags
+  - color tags based on how often they're used
+  - highlight links on tag hover
 
   - backend
   - write generator for subdirectories and include in build script
-  - create basic cachebusting
   - turn this into a template I can use for other sites
 */
 
@@ -31,9 +34,9 @@ function main () {
   `
 }
 
-// as the name suggests, this writes the index.html
+// this writes the index.html
 fs.writeFile('index.html', main(), 'utf8', function(){
   site.cache ++
-  fs.writeFileSync('site.json', JSON.stringify(site), 'utf8')
+  fs.writeFileSync('site.json', JSON.stringify(site,null,2), 'utf8')
   console.log('index.html written')
 })
