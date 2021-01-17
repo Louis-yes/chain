@@ -31,7 +31,7 @@ const components = {
 function body () {
   return `
   <body class="pa3">
-    <div class="
+    <div id="tags" class="
       tags fixed overflow-scroll
       top-0 h-50
       top-0-ns left-0-ns bottom-0-ns w-50-ns h-100-ns
@@ -46,11 +46,18 @@ function body () {
       "
     >
       <span id="active-tags" class="active-tags"></span>
-      ${links.links.reverse().map(ll => {
-         return components.link(ll)
-      }).join('')}
+      <div id="links">
+        ${links.links.reverse().map(ll => {
+           return components.link(ll)
+        }).join('')}
+      </div>
     </div>
-    <script src="./assets/scripts.js?v=${site.cache}"></script>
+    <script>
+      var links = ${JSON.stringify(links.links, null, 2)};
+      var tags = ${JSON.stringify(links.tags, null, 2)};
+    </script>
+    <!-- <script src="./assets/scripts.js?v=${site.cache}"></script> -->
+    <script src="./assets/thegoods.js?v=${site.cache}"></script>
   </body>
   `
 }
