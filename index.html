@@ -8,18 +8,28 @@
       <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
       <title>l i n k s</title>
       <link rel="stylesheet" href="assets/tachyons.min.css"/>
-      <link rel="stylesheet" href="assets/style.css?v=21"/>
+      <link rel="stylesheet" href="assets/style.css?v=48"/>
     </head>
     
     
-  <body class="pa3">
-    <div id="tags" class="
-      tags fixed overflow-scroll
-      top-0 h-50
-      top-0-ns left-0-ns bottom-0-ns w-50-ns h-100-ns
-      "
-    >
-      <a href="HCI" class="
+  <body class="">
+    <main>
+      
+      <header>
+        <h1 class="title">Louis links</h1>
+      </header>
+      <section class="description">
+        <p class="about">These links are things I’ve found online that I liked</p>
+      </section>
+  
+      <section class="link-of-the-day">
+         <!-- <p>Link of the day is: </p> -->
+      </section>
+      <section id="tags" class="
+        tags
+        "
+      >
+        <a href="HCI" class="
       tag link
     ">HCI</a><a href="tools" class="
       tag link
@@ -176,19 +186,26 @@
     ">crafts</a><a href="joyeria" class="
       tag link
     ">joyeria</a>
-    </div>
-    <div class="
-      links fixed overflow-scroll
-      bottom-0 h-50 pa2 lh-copy
-      top-0-ns right-0-ns bottom-0-ns h-100-ns w-50-ns
-      "
-    >
-      <span id="active-tags" class="active-tags"></span>
-      <div id="links">
-        
+      </section>
+      <section class="
+        links-section
+        "
+      >
+        <label for="search" class="label search"> search </label><input type="text" name="search" id="search" />
+        <label for"sort-by" class="label sort-by"> sort by </label>
+        <select name="sort-by" id="sort-by" value="3">
+          <option value="1">A-Z</option>
+          <option value="2">Z-A</option>
+          <option value="3" selected>newest</option>
+          <option value="4">oldest</option>
+          <option value="5">who cares</option>
+        </select>
+        <span id="active-tags" class="active-tags">50 links</span>
+        <div id="links" class="links">
+          
         <a
           class="link"
-          href="instagram.com/j.suska/"
+          href="https://instagram.com/j.suska/"
           title="Liza's (short for Jelizaveta Suska) profile with her art jewellery."
           data-tags="jewellery,joyeria,art,instagram">
           Liza's (short for Jelizaveta Suska) profile with her art jewellery. - instagram.com/j.suska
@@ -586,12 +603,16 @@
           A computer as a room - dynamicland.org
         </a>
       
-      </div>
-    </div>
+        </div>
+      </section>
+      
+  <footer></footer>
+  
+    </main>
     <script>
       var links = [
   {
-    "href": "instagram.com/j.suska/",
+    "href": "https://instagram.com/j.suska/",
     "title": "Liza's (short for Jelizaveta Suska) profile with her art jewellery.",
     "tags": [
       "jewellery",
@@ -1173,12 +1194,9 @@
   "joyeria"
 ];
     </script>
-    <!-- <script src="./assets/scripts.js?v=21"></script> -->
-    <script src="./assets/thegoods.js?v=21"></script>
+    <!-- <script src="./assets/scripts.js?v=48"></script> -->
+    <script src="./assets/thegoods.js?v=48"></script>
   </body>
-  
-    
-  <footer></footer>
   
   </html>
   

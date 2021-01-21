@@ -7,20 +7,77 @@
 
 /* self explanatory */
 *::-webkit-scrollbar { display: none; }
+p { margin: 0; }
 
-/* Tag styling */
+body {
+
+}
+
+/*************************************************************************
+* Layout
+*************************************************************************/
+
+header            { grid-area: HEADER; }
+.description      { grid-area: DESC;   }
+.link-of-the-day  { grid-area: LOTD;   }
+.tags             { grid-area: TAGS;   }
+.link-section     { grid-area: LINKS;  }
+
+main {
+  margin: 50px;
+  display: grid;
+
+  column-gap: 20px;
+
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 60px 120px auto;
+  grid-template-areas:
+    "HEADER   HEADER "
+    "DESC     LOTD "
+    "TAGS     LINKS";
+}
+
+
+/*************************************************************************
+* Header
+**************************************************************************/
+
+header, .description {
+  font-size: 18pt;
+  font-weight: 300;
+}
+
+.description {
+
+}
+
+.title {
+  display: inline-block;
+  height: 40px;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+.link-of-the-day {
+  font-size: 18pt;
+  font-weight: 300;
+}
+
+/*************************************************************************
+* Tags
+**************************************************************************/
 .tags {
-  /* padding: 1em */
+  padding-right: 50px;
+  margin-top: 118px;
 }
 .tag {
+  position: relative;
   display: inline-block;
-  padding: .3em;
-  margin: .3em;
+  padding: .4em .2em;
 
-  transition: transform .2s ease-in-out;
-  background: white;
-  border: 1px solid var(--primary);
-
+  background: none;
+  border: none;
+  overflow: visible;
   cursor: pointer;
 
   color:      var(--primary);
@@ -28,13 +85,60 @@
   font-family: serif;
   font-weight: 300;
 }
+
+.tag:not(:last-child)::after { content: ' | '; display: inline-block; margin-left: .3em}
+.tag:not(:last-child):hover::after { text-decoration: none;}
+
 .tag::selection{ background-color:none; }
-.tag:hover, .tag:focus{ transform: matrix(1, 0, 0, 1, 0, -3); }
-.tag.active { color: white; background: var(--primary); }
+.tag:hover,
+.tag:focus {
+  text-decoration: underline;
+  outline: none;
+  border: none;
+}
+.tag.active::before {
+  content: "";
+  width: 26px;
+  height: 26px;
+  display: block;
+  top: calc(50% - 13px);
+  left: calc(50% - 13px);
+  position: absolute;
+  overflow: visible;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' id='Layer_1' x='0' y='0px' width='26px' height='26px' enable-background='new 0 0 1024 768' xml:space='preserve'%3E%3Ccircle fill='none' stroke='%23FF4136' stroke-miterlimit='10' cx='13px' cy='13px' r='12'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+}
 
-.active-tags { display: block; font-style: italic; color: var(--primary);}
+.active-tags {
+  display: block; font-style: italic; color: var(--primary);
+  margin-top: 50px;
+}
 
-/* Link Styling */
+/*************************************************************************
+* Link Styling
+**************************************************************************/
+
+.links-section {
+  line-height: 1.5;
+}
+
+.links-section .label {
+  font-style: italic;
+}
+
+.links-section .label.sort-by {
+
+}
+
+.links-section .label.search {
+
+}
+
+.links {
+  margin-top: 22px;
+}
+
 .link {
   display: block;
   text-decoration: underline;

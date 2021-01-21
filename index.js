@@ -3,10 +3,7 @@
   TODO
 
   - frontend
-  - rewrite front-end js to be a little cleaner
-  - write styling properly, in css
-  - add some info to page, add some ｡･:*:･ﾟ★,｡･:*:･ﾟ☆ d e s i g n ｡･:*:･ﾟ★,｡･:*:･ﾟ☆
-  - search tags
+  - link of the day
   - color tags based on how often they're used
   - highlight links on tag hover
 
@@ -20,7 +17,6 @@ const fs = require('fs') // this is the node module for interacting with my loca
 const site = JSON.parse(fs.readFileSync('site.json'))
 
 const head = require('./components/head.js')
-const footer = require('./components/footer.js')
 const body = require('./components/body.js')
 
 function main () {
@@ -29,7 +25,6 @@ function main () {
   <html lang="en">
     ${head()}
     ${body()}
-    ${footer()}
   </html>
   `
 }
