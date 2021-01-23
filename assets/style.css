@@ -6,7 +6,7 @@
 }
 
 /* self explanatory */
-*::-webkit-scrollbar { display: none; }
+/* *::-webkit-scrollbar { display: none; } */
 p { margin: 0; }
 
 body {
@@ -24,7 +24,9 @@ header            { grid-area: HEADER; }
 .link-section     { grid-area: LINKS;  }
 
 main {
-  margin: 50px;
+  margin: 50px auto;
+  max-width: 1024px;
+  padding: 0 50px;
   display: grid;
 
   column-gap: 20px;
@@ -113,6 +115,7 @@ header, .description {
 .active-tags {
   display: block; font-style: italic; color: var(--primary);
   margin-top: 50px;
+  clear: both;
 }
 
 /*************************************************************************
@@ -125,10 +128,19 @@ header, .description {
 
 .links-section .label {
   font-style: italic;
+  display: block;
+  float: left;
+  margin-bottom: 10px;
+  margin-right:20px;
+}
+
+.links-section input, .links-section select {
+  display: block;
+  float: left;
 }
 
 .links-section .label.sort-by {
-
+  clear: left;
 }
 
 .links-section .label.search {
@@ -137,6 +149,8 @@ header, .description {
 
 .links {
   margin-top: 22px;
+  height: 400px;
+  overflow-y: scroll;
 }
 
 .link {
