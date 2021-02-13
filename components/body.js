@@ -25,9 +25,7 @@ const components = {
   },
   tag: function(tt) {
     const href = tt
-    return `<a href="${href}" class="
-      tag link
-    ">${tt}</a>`
+    return `<button class="tag" data-href="${href}" tabindex="0">${tt}</button>`
   }
 }
 
