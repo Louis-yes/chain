@@ -45,20 +45,19 @@ function body () {
       >
         ${links.tags.map(tt => components.tag(tt)).join('')}
       </section>
-      <section class="
-        links-section
-        "
-      >
-        <label for="search" class="label search"> search </label><input type="text" name="search" id="search" />
-        <label for"sort-by" class="label sort-by"> sort by </label>
-        <select name="sort-by" id="sort-by" value="3">
-          <option value="1">A-Z</option>
-          <option value="2">Z-A</option>
-          <option value="3" selected>newest</option>
-          <option value="4">oldest</option>
-          <option value="5">who cares</option>
-        </select>
-        <span id="active-tags" class="active-tags">${links.links.length} links</span>
+      <section class="links-section">
+        <div class="filter-tools">
+          <label for="search" class="label search"> search </label><input type="text" name="search" id="search" />
+          <label for"sort-by" class="label sort-by"> sort by </label>
+          <select name="sort-by" id="sort-by" value="3">
+            <option value="1">A-Z</option>
+            <option value="2">Z-A</option>
+            <option value="3" selected>newest</option>
+            <option value="4">oldest</option>
+            <option value="5">who cares</option>
+          </select>
+          <span id="active-tags" class="active-tags">${links.links.length} links</span>
+        </div>
         <div id="links" class="links">
           ${links.links.reverse().map(ll => {
              return components.link(ll)

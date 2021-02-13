@@ -16,29 +16,34 @@ body {
 /*************************************************************************
 * Layout
 *************************************************************************/
-
-header            { grid-area: HEADER; }
-.description      { grid-area: DESC;   }
-.link-of-the-day  { grid-area: LOTD;   }
-.tags             { grid-area: TAGS;   }
-.link-section     { grid-area: LINKS;  }
-
 main {
-  margin: 50px auto;
-  max-width: 1024px;
-  padding: 0 50px;
-  display: grid;
-
-  column-gap: 20px;
-
-  grid-template-columns: 50% 50%;
-  grid-template-rows: 60px 120px auto;
-  grid-template-areas:
-    "HEADER   HEADER "
-    "DESC     LOTD "
-    "TAGS     LINKS";
+  margin: 20px;
+  position: relative;
 }
 
+@media screen and (min-width: 1024px) {
+  header            { grid-area: HEADER; }
+  .description      { grid-area: DESC;   }
+  .link-of-the-day  { grid-area: LOTD;   }
+  .tags             { grid-area: TAGS;   }
+  .link-section     { grid-area: LINKS;  }
+
+  main {
+    margin: 50px auto;
+    max-width: 1024px;
+    padding: 0 50px;
+    display: grid;
+
+    column-gap: 20px;
+
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 60px 120px auto;
+    grid-template-areas:
+      "HEADER   HEADER "
+      "DESC     LOTD "
+      "TAGS     LINKS";
+  }
+}
 
 /*************************************************************************
 * Header
@@ -46,11 +51,21 @@ main {
 
 header, .description {
   font-size: 18pt;
-  font-weight: 300;
+  color: var(--primary);
+  font-weight: 400;
+}
+
+@media screen and (min-width: 1023px) {
+  header, .description {
+    font-size: 18pt;
+    font-weight: 300;
+    color: #000;
+  }
 }
 
 .description {
-
+  padding-right: 50px;
+  margin-bottom: 60px;
 }
 
 .title {
@@ -69,9 +84,9 @@ header, .description {
 * Tags
 **************************************************************************/
 .tags {
-  padding-right: 50px;
-  margin-top: 118px;
+  display: none;
 }
+
 .tag {
   position: relative;
   display: inline-block;
@@ -118,15 +133,44 @@ header, .description {
   clear: both;
 }
 
+@media screen and (min-width: 1024px) {
+  .tags {
+    display: block;
+    padding-right: 50px;
+    margin-top: 118px;
+  }
+}
+
 /*************************************************************************
 * Link Styling
 **************************************************************************/
+@media screen and (max-width: 1023px) {
+ .filter-tools {
+      position: sticky;
+      padding: 20px;
+      border: 1px solid #111;
+      top:10px;
+      left:10px;
+      right: 10px;
+      width:100%;
+      margin: 20px 0 60px;
+      display: block;
+      /* height: 50px; */
+      background: white;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .filter-tools {
+    position: relative;
+  }
+}
 
 .links-section {
   line-height: 1.5;
 }
 
-.links-section .label {
+.filter-tools .label {
   font-style: italic;
   display: block;
   float: left;
@@ -134,28 +178,42 @@ header, .description {
   margin-right:20px;
 }
 
-.links-section input, .links-section select {
+.filter-tools input, .filter-tools select {
   display: block;
   float: left;
 }
 
-.links-section .label.sort-by {
+.filter-tools .label.sort-by {
   clear: left;
 }
 
-.links-section .label.search {
+.filter-tools .label.search {
 
 }
 
 .links {
-  margin-top: 22px;
-  height: 400px;
-  overflow-y: scroll;
+  overflow-wrap: break-word;
+  font-size: 16pt;
 }
 
 .link {
   display: block;
-  text-decoration: underline;
   color: black;
+  margin-bottom: 20px;
 }
 .link:hover, .link:focus { color: var(--primary); }
+
+@media screen and (min-width: 1024px) {
+  .links {
+    margin-top: 22px;
+    font-size: 12pt;
+    height: 400px;
+    overflow-y: scroll;
+  }
+  .link {
+    display: block;
+    text-decoration: underline;
+    color: black;
+    margin-bottom: 5px;
+  }
+}
