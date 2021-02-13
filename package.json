@@ -9,5 +9,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Louis",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "are.na": "^0.1.5",
+    "dotenv": "^8.2.0"
+  }
 }
