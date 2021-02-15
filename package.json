@@ -10,6 +10,10 @@
   },
   "author": "Louis",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Louis-yes/chain.git"
+  },
   "dependencies": {
     "are.na": "^0.1.5",
     "dotenv": "^8.2.0"
